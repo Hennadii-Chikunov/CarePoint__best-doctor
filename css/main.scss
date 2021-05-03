@@ -1,0 +1,619 @@
+@import "_normalize";
+@import "_fonts";
+@import "_header";
+/* 
+ font-family: 'Calibri';
+ font-family: "Myriad Pro";
+ font-family: "Lato";
+*/
+* {
+  box-sizing: border-box;
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  max-width: 100%;
+  overflow-y: auto;
+  overflow-x: auto;
+}
+
+h1 {
+  margin: 0;
+}
+
+button {
+  cursor: pointer;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+a {
+  text-decoration: none;
+}
+.container {
+  width: 1440px;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+/* ВЫНЕС в общий в самый вверх ради общего использования */
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 245px;
+  cursor: pointer;
+  &__img {
+    width: 65px;
+    height: 60px;
+  }
+  &__info {
+    font-family: "Calibri Bold";
+    width: 160px;
+    font-size: 24px;
+    letter-spacing: 0.06em;
+    line-height: 30px;
+    color: #ffffff;
+    text-shadow: 0px 6px 14px rgba(0, 0, 0, 0.35);
+  }
+}
+.form-info {
+  box-sizing: border-box;
+  display: inline-block;
+  border-radius: 2px;
+  margin: 50px 0 0px 0;
+  height: -webkit-fill-available;
+  height: max-content;
+  &__tel {
+    padding: 12px 15px;
+    border-radius: 2px;
+    font-family: "Myriad Pro Regular";
+    width: 225px;
+    height: 35px;
+    box-sizing: border-box;
+  }
+  &__btn {
+    border: solid 1px #6c757d;
+    color: #6c757d;
+    background: #cbd4e6;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 105px;
+    letter-spacing: 0.06em;
+    max-width: 100%;
+    height: 37px;
+    position: relative;
+    left: -5px;
+    top: 1px;
+  }
+}
+.form-info--text-call {
+  position: relative;
+  background: transparent;
+  &::before {
+    content: "Заказать звонок:";
+    font-family: "Calibri Bold";
+    font-size: 24px;
+    color: #ffffff;
+    letter-spacing: 0.06em;
+    line-height: 30px;
+    padding-right: 5px;
+  }
+}
+/* section BANNER */
+.section-banner {
+  background-color: #cbd4e6;
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    min-height: 500px;
+    background: url("../img/banner/doctor-man.jpg") no-repeat;
+    background-size: cover;
+  }
+  &__img-semanthic {
+    visibility: hidden;
+  }
+  &__info {
+    text-align: end;
+  }
+  &__info-text {
+    font-family: "Calibri Regular";
+    font-size: 24px;
+    letter-spacing: 0.06em;
+    width: 778px;
+    max-width: 100%;
+    padding: 115px 0 60px 0;
+    color: #494848;
+  }
+  &__info-title {
+    font-family: "Myriad Pro Bold";
+    letter-spacing: 0.06em;
+    font-size: 36px;
+    max-width: 520px;
+    display: inline-block;
+    color: #494848;
+  }
+}
+/* /. section BANNER */
+
+/* section SERVICES */
+.section-services {
+  &__container {
+    display: flex;
+  }
+  &__block {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    width: 360px;
+    height: 320px;
+    background: #43b1d2;
+    color: #ffffff;
+  }
+  &__block--color-two {
+    background: #3fb6c6;
+  }
+  &__block--color-three {
+    background: #3cbbbb;
+  }
+  &__block--color-four {
+    background: #37c3a8;
+  }
+  &__circle {
+    width: 70px;
+    height: 70px;
+    background: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &__title {
+    font-family: "Myriad Pro Bold";
+    font-size: 27px;
+    letter-spacing: -0.025em;
+    padding: 20px 0 20px 0;
+  }
+  &__text {
+    font-family: "Myriad Pro Regular";
+    font-size: 16px;
+    line-height: 1.875;
+    text-align: center;
+    width: 281px;
+    max-width: 100%;
+    word-break: break-all;
+  }
+}
+/* /.section SERVICES */
+/* section TABS */
+.section-tabs {
+  padding: 35px 0 0px 0;
+  min-height: 1075px;
+  height: 100%;
+  &__tabs {
+    position: relative; /* Относительное позиционирование */
+  }
+  &__tab,
+  &__title {
+    display: inline-block; /* Выстраиваем по горизонтали */
+  }
+  &__tab input[type="radio"] {
+    display: none;
+  }
+  &__title {
+    background: transparent; /* Цвет фона */
+    color: #43b1d2;
+    padding: 5px 10px; /* Поля вокруг текста */
+    font-family: "Calibri Bold";
+    font-size: 24px;
+    line-height: 14px;
+    padding: 15px;
+  }
+  &__content {
+    position: absolute; /* Абсолютное позиционирование */
+    border: 1px solid #dee2e6; /* Параметры рамки */
+    left: 0; /* Размещаем у левого края */
+    width: 100%; /* Ширина содержимого */
+    display: none; /* Прячем вкладку */
+    padding: 45px 15px 0px 15px;
+  }
+
+  &__tab :checked + &__title {
+    position: relative; /* Относительное позиционирование */
+    background: #fff; /* Цвет фона */
+    border: 1px solid #dee2e6; /* Параметры рамки */
+    border-bottom: none; /* Снизу линию убираем */
+    border-radius: 4px;
+    color: #494848;
+    top: 1px; /* Сдвигаем вниз */
+    z-index: 1; /* Отображаем поверх содержимого */
+  }
+  &__tab :checked ~ &__content {
+    display: block; /* Показываем активную вкладку */
+  }
+  &__grid {
+    display: grid;
+    grid-template-columns: minmax(320px, 1fr) minmax(320px, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-column-gap: 30px;
+    grid-row-gap: 30px;
+  }
+
+  &__info {
+    border: solid 3px #43b1d2;
+    padding: 10px;
+  }
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  &__logo {
+    margin-bottom: -14px;
+  }
+  &__address {
+    font-family: "Calibri Italic";
+    color: #43b1d2;
+    font-size: 16px;
+    text-align: end;
+  }
+  &__address-title {
+    font-family: "Calibri Bold";
+    font-style: normal;
+    font-size: 36px;
+    color: #494848;
+    margin-bottom: 10px;
+  }
+  &__text {
+    font-family: "Calibri Regular";
+    font-size: 18px;
+    line-height: 16px;
+    width: 600px;
+    max-width: 100%;
+    text-align: left;
+    margin-top: 25px;
+  }
+  &__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 12px;
+  }
+  &__footer-phone {
+    font-family: "Calibri Bold";
+    font-size: 19px;
+    line-height: 17px;
+    color: #494848;
+  }
+  &__footer-btn {
+    width: 175px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #37c3a8;
+    color: #ffffff;
+    font-family: "Calibri Bold";
+    border-radius: 4px;
+  }
+  &__btn-all {
+    font-family: "Calibri Regular";
+    background: #cbd4e6;
+    border-radius: 3px;
+    position: relative;
+    left: 50%;
+    margin: 0 auto;
+    height: 40px;
+    width: 125px;
+    margin-bottom: 45px;
+    transform: translate(14%, 30%);
+  }
+}
+/* /.section TABS */
+/* /.section SLIDERS*/
+.section-sliders {
+  background-color: #e5e9f2;
+  padding-top: 30px;
+  padding-bottom: 40px;
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    #read-more {
+      display: none;
+    }
+    .slider {
+      max-width: 815px;
+      &__wrapper {
+        background: transparent;
+      }
+    }
+    .slider-two {
+      max-width: 460px;
+    }
+    .slider__items {
+      counter-reset: slide;
+    }
+
+    .slider__item {
+      counter-increment: slide;
+    }
+    .btn-wrapper {
+      padding-left: 15px;
+      display: flex;
+    }
+    .btn-two-wrapper {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 30px;
+    }
+    .btn {
+      background: #cbd4e6;
+      width: 45px;
+      height: 35px;
+      border-radius: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      svg {
+        width: 15px;
+        height: 15px;
+      }
+      &:hover {
+        background-color: #000000;
+        fill: #0087be;
+        transition: background-color 0.7s;
+      }
+    }
+    .btn__prev,
+    .btn-two__prev {
+      transform: rotate(-180deg);
+    }
+    .btn__next,
+    .btn-two__next {
+      margin-left: 15px;
+    }
+  }
+  &__title {
+    font-family: "Calibri Italic";
+    font-weight: 400;
+    font-size: 34px;
+    line-height: 1em;
+    padding-bottom: 30px;
+    color: #494848;
+  }
+  &__flex-img-text {
+    display: flex;
+  }
+  &__woman-img {
+    width: 350px;
+    height: 235px;
+  }
+  &__all-texts {
+    padding-left: 50px;
+  }
+  &__fish-text {
+    font-family: "Calibri Regular";
+    font-size: 18px;
+    line-height: 14px;
+    text-align: left;
+    width: 410px;
+  }
+  &__fish-text--one {
+    padding-bottom: 15px;
+  }
+  &__fish-text--two {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    line-height: 14px;
+    width: 410px;
+    height: 100px;
+  }
+  &__btn-read-more {
+    display: block;
+    margin-inline-start: auto;
+    background-color: #37c3a8;
+    color: #ffffff;
+    font-family: "Calibri Regular";
+    padding: 10px;
+    border-radius: 3px;
+    margin-top: 10px;
+    cursor: pointer;
+  }
+}
+/* section CALL */
+.section-call {
+  background: #43b1d2;
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    min-height: 125px;
+  }
+}
+/* section Footer INFO */
+.footer-info {
+  background: #e5e9f2;
+  padding-top: 115px;
+  color: #909398;
+  &__top {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__block-address {
+    padding: 0 0 0 105px;
+  }
+  &__title {
+    font-family: "Myriad Pro Regular";
+    font-size: 22px;
+    letter-spacing: 0.025em;
+    color: #000000;
+    display: inline;
+  }
+  &__title--links {
+    position: absolute;
+    left: -40px;
+  }
+  &__mail-address {
+    display: flex;
+    margin: 70px 0 0px 0;
+    &::before {
+      content: url("../img/footer/mail.png");
+      width: 27px;
+      height: 40px;
+      padding-right: 40px;
+    }
+  }
+  &__mail-link,
+  &__link-tel,
+  &__link-icon {
+    color: #909398;
+    display: block;
+  }
+  &__link-icon {
+    &:hover {
+      color: #0087be;
+    }
+  }
+  &__social-tube {
+    &:hover {
+      fill: #ff001d;
+    }
+  }
+  &__tel-address {
+    display: flex;
+    padding: 50px 0 60px 0;
+    &::before {
+      content: url("../img/footer/phone.png");
+      width: 50px;
+      height: 40px;
+      padding-right: 9px;
+      padding-left: 7px;
+    }
+  }
+  &__address {
+    display: inline-flex;
+    padding-bottom: 60px;
+    &::before {
+      content: url("../img/footer/address.png");
+      width: 40px;
+      height: 40px;
+      padding: 0px 24px 0px 1px;
+    }
+  }
+  &__text-address {
+    width: 185px;
+    display: inline-block;
+  }
+  &__social-icons {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 230px;
+    .fab {
+      width: 20px;
+      height: 25px;
+    }
+  }
+  &__wrap-icon {
+    &:nth-child(4) {
+      margin-bottom: 10px;
+    }
+  }
+  &__social-tube {
+    fill: #909398;
+  }
+  &__links,
+  &__services {
+    position: relative;
+  }
+  &__list {
+    margin: 70px 0 0 0;
+  }
+  &__item {
+    list-style: none;
+    padding-bottom: 25px;
+    position: relative;
+    &:last-child {
+      padding-bottom: 0;
+    }
+  }
+  &__link-style {
+    font-family: "Myriad Pro Regular";
+    font-size: 16px;
+    letter-spacing: 0.025em;
+    color: #909398;
+    &::before {
+      content: "";
+      width: 0;
+      height: 0;
+      border-width: 6px 0 6px 7px;
+      border-color: transparent transparent transparent #0087be;
+      border-style: solid;
+      position: absolute;
+      left: -22px;
+    }
+    &:hover {
+      color: #0087be;
+      transition: color 0.5s;
+    }
+  }
+  &__title--services {
+    position: absolute;
+    left: -25px;
+  }
+  &__form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+  }
+  &__field {
+    background: transparent;
+    height: 50px;
+    border-bottom: solid 1px #d6d9de;
+    &::placeholder {
+      font-family: "Myriad Pro Regular";
+      font-size: 16px;
+      letter-spacing: 0.025em;
+    }
+  }
+  &__message {
+    background: transparent;
+    border-bottom: solid 1px #d6d9de;
+    resize: none;
+    padding-top: 20px;
+  }
+  &__btn {
+    font-family: "Lato Bold";
+    font-size: 14px;
+    color: #ffffff;
+    background-color: #0087be;
+    letter-spacing: 0.025em;
+    width: 125px;
+    height: 35px;
+    border-radius: 16px;
+    margin-top: 25px;
+  }
+  &__copyright {
+    height: 130px;
+    margin-top: 105px;
+    background-color: #43b1d2;
+    color: #ffffff;
+    font-family: "Myriad Pro Regular";
+    font-size: 13px;
+    letter-spacing: 0.025em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1em;
+  }
+}
