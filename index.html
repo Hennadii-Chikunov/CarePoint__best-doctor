@@ -82,6 +82,15 @@
               </li>
             </ul>
           </nav>
+          <!-- меню бургер -->
+          <div class="header-page__hamburger">
+            <button class="btn-menu" type="button" data-popup="popup-menu">
+              <span class="btn-menu__box">
+                <span class="btn-menu__inner"></span>
+              </span>
+            </button>
+          </div>
+          <!-- / меню бургер -->
         </div>
       </div>
     </header>
@@ -1384,6 +1393,65 @@
         <p>Copyright&copy; 2017.</p>
       </div>
     </footer>
+    <!-- popUP-menu mobile header -->
+    <div class="popup popup-menu">
+      <div class="popup__body">
+        <div class="popup__content popup__content--fluid">
+          <button class="btn-close popup__btn-close popup-close"></button>
+          <nav class="mobile-menu">
+            <ul class="mobile-menu__ul">
+              <li class="mobile-menu__li">
+                <a href="#" class="header-page__link is-active">
+                  <span class="header-page__link-name">Главная</span>
+                </a>
+              </li>
+              <li class="mobile-menu__li">
+                <a
+                  href="#"
+                  class="header-page__link header-page__link--arrow-down"
+                >
+                  <span class="header-page__link-name">Услуги</span>
+                </a>
+              </li>
+              <li class="mobile-menu__li">
+                <a href="#" class="header-page__link">
+                  <span class="header-page__link-name">Клиники и кабинеты</span>
+                </a>
+              </li>
+              <li class="mobile-menu__li">
+                <a href="#" class="header-page__link">
+                  <span class="header-page__link-name">О нас</span>
+                </a>
+              </li>
+              <li class="mobile-menu__li">
+                <a href="#" class="header-page__link">
+                  <span class="header-page__link-name">Статьи</span>
+                </a>
+              </li>
+              <li class="mobile-menu__li">
+                <a href="#" class="header-page__link">
+                  <span class="header-page__link-name">FAQ</span>
+                </a>
+              </li>
+              <li class="mobile-menu__li">
+                <a href="#" class="header-page__link">
+                  <span class="header-page__link-name">Контакты</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+          <div class="phone popup-phone">
+            <a
+              class="header-page__phone-link header-page__phone-link--icon"
+              href="tel:803005000"
+            >
+              80300 5000
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /.popUP-menu header mobile-->
     <!-- подключил файл стилей JS  -->
     <script src="./js/main.js"></script>
     <!-- подключил JS скрипт библитеки на чистом js без jquery  -->

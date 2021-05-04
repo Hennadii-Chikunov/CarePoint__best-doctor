@@ -5,8 +5,12 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-flow: row wrap;
     min-height: 120px;
     position: relative;
+    @media (max-width: 1200px) {
+      min-height: 90px;
+    }
   }
   &__end {
     align-self: flex-end;
@@ -16,6 +20,14 @@
     right: 20px;
     bottom: 60px;
     width: max-content;
+    @media (max-width: 1200px) {
+      right: 80px;
+      bottom: 50%;
+      transform: translateY(50%);
+    }
+    @media (max-width: 480px) {
+      display: none;
+    }
   }
   &__phone-link {
     color: #ffffff;
@@ -32,6 +44,11 @@
     padding-right: 17px;
     position: relative;
     top: 2px;
+  }
+  &__nav {
+    @media (max-width: 1200px) {
+      display: none;
+    }
   }
   &__list {
     display: flex;
@@ -50,6 +67,11 @@
     &:focus {
       color: #ffffff;
     }
+    @media (max-width: 1200px) {
+      font-size: 22px;
+      padding: 20px 30px;
+      color: #000000;
+    }
   }
   &__link--arrow-down::after {
     content: "\f063";
@@ -57,9 +79,62 @@
     font-weight: 900;
     font-size: 14px;
   }
-  &__item {
-    .is-active {
-      color: #ffffff;
+
+  .btn-menu {
+    background: none;
+    border-radius: 0;
+    cursor: pointer;
+    display: inline-block;
+    padding: 15px;
+    border: 0;
+    position: absolute;
+    bottom: 10px;
+    right: 0;
+    &__box {
+      display: inline-block;
+      width: 40px;
+      height: 24px;
     }
+    &__inner {
+      background: #000000;
+      height: 4px;
+      width: 100%;
+      display: block;
+      top: 50%;
+      position: relative;
+      border-radius: 6px;
+      &::before,
+      &::after {
+        content: "";
+        width: 100%;
+        height: 4px;
+        background: #000000;
+        position: absolute;
+        left: 0;
+        border-radius: 6px;
+      }
+      &::before {
+        top: -10px;
+      }
+      &::after {
+        bottom: -10px;
+      }
+    }
+  }
+  .header-page__hamburger {
+    display: none;
+    margin-right: -15px;
+  }
+  @media (max-width: 1200px) {
+    .header-page {
+      padding: 5px 0;
+      &__hamburger {
+        display: block;
+      }
+    }
+  }
+  &.is-active {
+    padding-top: 0;
+    padding-bottom: 0;
   }
 }
