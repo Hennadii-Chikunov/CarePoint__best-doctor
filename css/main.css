@@ -978,7 +978,7 @@ a {
   background-size: cover;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1240px) {
   .section-banner__container {
     background: none;
     padding-bottom: 50px;
