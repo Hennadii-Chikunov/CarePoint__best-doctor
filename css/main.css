@@ -978,12 +978,33 @@ a {
   background-size: cover;
 }
 
+@media (max-width: 1200px) {
+  .section-banner__container {
+    background: none;
+    padding-bottom: 50px;
+  }
+}
+
 .section-banner__img-semanthic {
   visibility: hidden;
 }
 
+@media (max-width: 1240px) {
+  .section-banner__img-semanthic {
+    width: 0;
+  }
+}
+
 .section-banner__info {
   text-align: end;
+  width: 100%;
+}
+
+@media (max-width: 1240px) {
+  .section-banner__info {
+    text-align: center;
+    padding: 0px 15px;
+  }
 }
 
 .section-banner__info-text {
@@ -996,6 +1017,22 @@ a {
   color: #494848;
 }
 
+@media (max-width: 1240px) {
+  .section-banner__info-text {
+    font-size: 20px;
+    width: 570px;
+    text-align: justify;
+    margin: auto;
+  }
+}
+
+@media (max-width: 567px) {
+  .section-banner__info-text {
+    font-size: 18px;
+    letter-spacing: 0.01em;
+  }
+}
+
 .section-banner__info-title {
   font-family: "Myriad Pro Bold";
   letter-spacing: 0.06em;
@@ -1005,12 +1042,23 @@ a {
   color: #494848;
 }
 
+@media (max-width: 1240px) {
+  .section-banner__info-title {
+    font-size: 25px;
+    max-width: 350px;
+    display: block;
+    margin: auto;
+  }
+}
+
 /* /. section BANNER */
 /* section SERVICES */
 .section-services__container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .section-services__block {

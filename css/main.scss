@@ -130,12 +130,24 @@ a {
     min-height: 500px;
     background: url("../img/banner/doctor-man.jpg") no-repeat;
     background-size: cover;
+    @media (max-width: 1200px) {
+      background: none;
+      padding-bottom: 50px;
+    }
   }
   &__img-semanthic {
     visibility: hidden;
+    @media (max-width: 1240px) {
+      width: 0;
+    }
   }
   &__info {
     text-align: end;
+    width: 100%;
+    @media (max-width: 1240px) {
+      text-align: center;
+      padding: 0px 15px;
+    }
   }
   &__info-text {
     font-family: "Calibri Regular";
@@ -145,6 +157,16 @@ a {
     max-width: 100%;
     padding: 115px 0 60px 0;
     color: #494848;
+    @media (max-width: 1240px) {
+      font-size: 20px;
+      width: 570px;
+      text-align: justify;
+      margin: auto;
+    }
+    @media (max-width: 567px) {
+      font-size: 18px;
+      letter-spacing: 0.01em;
+    }
   }
   &__info-title {
     font-family: "Myriad Pro Bold";
@@ -153,6 +175,12 @@ a {
     max-width: 520px;
     display: inline-block;
     color: #494848;
+    @media (max-width: 1240px) {
+      font-size: 25px;
+      max-width: 350px;
+      display: block;
+      margin: auto;
+    }
   }
 }
 /* /. section BANNER */
@@ -161,6 +189,7 @@ a {
 .section-services {
   &__container {
     display: flex;
+    flex-wrap: wrap;
   }
   &__block {
     display: flex;
