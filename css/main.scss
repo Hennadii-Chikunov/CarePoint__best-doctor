@@ -246,75 +246,101 @@ a {
 /* /.section SERVICES */
 /* section TABS */
 .section-tabs {
-  padding: 35px 0 0px 0;
-  min-height: 1075px;
-  height: 100%;
-  &__tabs {
-    position: relative; /* Относительное позиционирование */
+  padding: 35px 0 75px 0;
+  background-color: #ffffff;
+  .tab-wrapper {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+    font-family: sans-serif;
+    overflow-x: scroll;
   }
-  &__tab,
-  &__title {
-    display: inline-block; /* Выстраиваем по горизонтали */
-  }
-  &__tab input[type="radio"] {
+  .tab-wrapper .tab-item,
+  .tab-wrapper input {
     display: none;
   }
-  &__title {
-    background: transparent; /* Цвет фона */
+  .tab-wrapper .tab-item {
+    background-color: #fff;
+    max-width: 100%;
+    padding: 20px;
+    order: 1;
+  }
+  .tab-wrapper label {
+    height: 35px;
+    line-height: 35px;
+    min-width: 50px;
+    padding: 0px 20px;
+    text-align: center;
     color: #43b1d2;
-    padding: 5px 10px; /* Поля вокруг текста */
     font-family: "Calibri Bold";
+    text-transform: uppercase;
     font-size: 24px;
-    line-height: 14px;
-    padding: 15px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    align-items: center;
+    justify-content: center;
+    border-top: 3px solid transparent;
+    border-bottom: 3px solid transparent;
+    cursor: pointer;
+    @media (max-width: 767px) {
+      flex-grow: 1;
+    }
   }
-  &__content {
-    position: absolute; /* Абсолютное позиционирование */
-    border: 1px solid #dee2e6; /* Параметры рамки */
-    left: 0; /* Размещаем у левого края */
-    width: 100%; /* Ширина содержимого */
-    display: none; /* Прячем вкладку */
-    padding: 45px 15px 0px 15px;
+  .no-select {
+    border-bottom: none;
   }
-
-  &__tab :checked + &__title {
-    position: relative; /* Относительное позиционирование */
+  .tab-wrapper input:checked + label {
     background: #fff; /* Цвет фона */
-    border: 1px solid #dee2e6; /* Параметры рамки */
-    border-bottom: none; /* Снизу линию убираем */
-    border-radius: 4px;
     color: #494848;
-    top: 1px; /* Сдвигаем вниз */
-    z-index: 1; /* Отображаем поверх содержимого */
   }
-  &__tab :checked ~ &__content {
-    display: block; /* Показываем активную вкладку */
+  .tab-wrapper input:checked + label + .tab-item {
+    display: block;
   }
-  &__grid {
-    display: grid;
-    grid-template-columns: minmax(320px, 1fr) minmax(320px, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    grid-column-gap: 30px;
-    grid-row-gap: 30px;
+  &__flex {
+    display: flex;
+    flex-flow: wrap;
+    gap: 30px;
   }
-
   &__info {
     border: solid 3px #43b1d2;
     padding: 10px;
+    flex-grow: 1;
+    @media (max-width: 676px) {
+      width: 100%;
+    }
   }
   &__header {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
+    @media (max-width: 767px) {
+      flex-wrap: wrap;
+    }
+    @media (max-width: 556px) {
+      justify-content: center;
+    }
   }
   &__logo {
     margin-bottom: -14px;
+    @media (max-width: 767px) {
+      max-width: 160px;
+    }
   }
   &__address {
     font-family: "Calibri Italic";
     color: #43b1d2;
     font-size: 16px;
     text-align: end;
+    @media (max-width: 767px) {
+      font-size: 14px;
+    }
+    @media (max-width: 556px) {
+      text-align: center;
+      margin: 10px 0 0 0;
+    }
   }
   &__address-title {
     font-family: "Calibri Bold";
@@ -322,6 +348,9 @@ a {
     font-size: 36px;
     color: #494848;
     margin-bottom: 10px;
+    @media (max-width: 767px) {
+      font-size: 28px;
+    }
   }
   &__text {
     font-family: "Calibri Regular";
@@ -331,18 +360,35 @@ a {
     max-width: 100%;
     text-align: left;
     margin-top: 25px;
+    @media (max-width: 1351px) {
+      width: 1000px;
+      width: 100%;
+    }
+    @media (max-width: 767px) {
+      font-size: 17px;
+      text-align: justify;
+    }
   }
   &__footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-top: 12px;
+    @media (max-width: 767px) {
+      flex-wrap: wrap;
+    }
+    @media (max-width: 507px) {
+      justify-content: center;
+    }
   }
   &__footer-phone {
     font-family: "Calibri Bold";
     font-size: 19px;
     line-height: 17px;
     color: #494848;
+    @media (max-width: 507px) {
+      font-size: 16px;
+    }
   }
   &__footer-btn {
     width: 175px;
@@ -354,6 +400,11 @@ a {
     color: #ffffff;
     font-family: "Calibri Bold";
     border-radius: 4px;
+    @media (max-width: 507px) {
+      margin: 15px 0 15px 0;
+      width: 165px;
+      max-width: 165px;
+    }
   }
   &__btn-all {
     font-family: "Calibri Regular";
@@ -361,11 +412,10 @@ a {
     border-radius: 3px;
     position: relative;
     left: 50%;
-    margin: 0 auto;
     height: 40px;
     width: 125px;
     margin-bottom: 45px;
-    transform: translate(14%, 30%);
+    transform: translate(-50%, 30%);
   }
 }
 /* /.section TABS */
@@ -377,6 +427,9 @@ a {
   &__container {
     display: flex;
     justify-content: space-between;
+    @media (max-width: 1300px) {
+      display: block;
+    }
     #read-more {
       display: none;
     }
