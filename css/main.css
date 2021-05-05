@@ -1057,8 +1057,13 @@ a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+}
+
+@media (max-width: 1140px) {
+  .section-services__container {
+    -ms-flex-flow: wrap;
+        flex-flow: wrap;
+  }
 }
 
 .section-services__block {

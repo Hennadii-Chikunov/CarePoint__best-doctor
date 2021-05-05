@@ -189,7 +189,9 @@ a {
 .section-services {
   &__container {
     display: flex;
-    flex-wrap: wrap;
+    @media (max-width: 1140px) {
+      flex-flow: wrap;
+    }
   }
   &__block {
     display: flex;
