@@ -1165,7 +1165,6 @@ a {
       -ms-flex-pack: start;
           justify-content: flex-start;
   font-family: sans-serif;
-  overflow-x: scroll;
 }
 
 .section-tabs .tab-wrapper .tab-item,
