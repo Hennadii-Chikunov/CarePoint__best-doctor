@@ -106,6 +106,9 @@ a {
     position: relative;
     left: -5px;
     top: 1px;
+    @media (max-width: 393px) {
+      top: 20px;
+    }
   }
 }
 .form-info--text-call {
@@ -147,6 +150,7 @@ a {
     @media (max-width: 1240px) {
       text-align: center;
       padding: 0px 15px;
+      align-self: center;
     }
   }
   &__info-text {
@@ -162,6 +166,7 @@ a {
       width: 570px;
       text-align: justify;
       margin: auto;
+      padding: 40px 0 25px 0;
     }
     @media (max-width: 567px) {
       font-size: 18px;

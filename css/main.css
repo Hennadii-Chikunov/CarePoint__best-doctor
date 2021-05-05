@@ -946,6 +946,12 @@ a {
   top: 1px;
 }
 
+@media (max-width: 393px) {
+  .form-info__btn {
+    top: 20px;
+  }
+}
+
 .form-info--text-call {
   position: relative;
   background: transparent;
@@ -1004,6 +1010,9 @@ a {
   .section-banner__info {
     text-align: center;
     padding: 0px 15px;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
   }
 }
 
@@ -1023,6 +1032,7 @@ a {
     width: 570px;
     text-align: justify;
     margin: auto;
+    padding: 40px 0 25px 0;
   }
 }
 
