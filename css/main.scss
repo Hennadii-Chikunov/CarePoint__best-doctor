@@ -306,6 +306,7 @@ a {
   &__info {
     border: solid 3px #43b1d2;
     padding: 10px;
+    width: 600px;
     flex-grow: 1;
     @media (max-width: 676px) {
       width: 100%;
