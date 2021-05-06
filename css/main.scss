@@ -91,6 +91,9 @@ a {
     width: 225px;
     height: 35px;
     box-sizing: border-box;
+    @media (max-width: 597px) {
+      width: 50%;
+    }
   }
   &__btn {
     border: solid 1px #6c757d;
@@ -106,6 +109,9 @@ a {
     position: relative;
     left: -5px;
     top: 1px;
+    @media (max-width: 967px) {
+      position: static;
+    }
     @media (max-width: 393px) {
       top: 20px;
     }
@@ -121,7 +127,11 @@ a {
     color: #ffffff;
     letter-spacing: 0.06em;
     line-height: 30px;
-    padding-right: 5px;
+    @media (max-width: 997px) {
+      position: absolute;
+      top: -25px;
+      margin-top: -5px;
+    }
   }
 }
 /* section BANNER */
@@ -438,6 +448,9 @@ a {
       &__wrapper {
         background: transparent;
       }
+      &__two-wrap {
+        margin: 50px 0 0 0;
+      }
     }
     .slider-two {
       max-width: 460px;
@@ -493,16 +506,31 @@ a {
     line-height: 1em;
     padding-bottom: 30px;
     color: #494848;
+    @media (max-width: 1300px) {
+      text-align: center;
+      font-size: 30px;
+    }
   }
   &__flex-img-text {
     display: flex;
+    flex-wrap: wrap;
+    @media (max-width: 839px) {
+      justify-content: center;
+    }
   }
   &__woman-img {
     width: 350px;
     height: 235px;
+    @media (max-width: 967px) {
+      width: 300px;
+      height: 220px;
+    }
   }
   &__all-texts {
-    padding-left: 50px;
+    margin-left: 50px;
+    @media (max-width: 997px) {
+      margin-left: 10px;
+    }
   }
   &__fish-text {
     font-family: "Calibri Regular";
@@ -510,6 +538,13 @@ a {
     line-height: 14px;
     text-align: left;
     width: 410px;
+    @media (max-width: 839px) {
+      text-align: justify;
+      font-size: 16px;
+    }
+    @media (max-width: 767px) {
+      width: 100%;
+    }
   }
   &__fish-text--one {
     padding-bottom: 15px;
@@ -519,7 +554,6 @@ a {
     display: -webkit-box;
     -webkit-box-orient: vertical;
     line-height: 14px;
-    width: 410px;
     height: 100px;
   }
   &__btn-read-more {
@@ -532,6 +566,10 @@ a {
     border-radius: 3px;
     margin-top: 10px;
     cursor: pointer;
+    @media (max-width: 576px) {
+      margin-bottom: 15px;
+      margin-top: 15px;
+    }
   }
 }
 /* section CALL */
@@ -541,6 +579,11 @@ a {
     display: flex;
     justify-content: space-between;
     min-height: 125px;
+    flex-wrap: wrap;
+    @media (max-width: 560px) {
+      justify-content: center;
+      padding: 50px 0 50px 0;
+    }
   }
 }
 /* section Footer INFO */
@@ -548,12 +591,30 @@ a {
   background: #e5e9f2;
   padding-top: 115px;
   color: #909398;
+  @media (max-width: 960px) {
+    padding-top: 40px;
+  }
+  &__block {
+    margin-bottom: 50px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
   &__top {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
+    @media (max-width: 960px) {
+      flex-flow: column;
+      justify-content: center;
+      align-items: center;
+    }
   }
   &__block-address {
     padding: 0 0 0 105px;
+    @media (max-width: 1140px) {
+      padding: 0 0 0 0;
+    }
   }
   &__title {
     font-family: "Myriad Pro Regular";
@@ -718,5 +779,8 @@ a {
     align-items: center;
     justify-content: center;
     line-height: 1em;
+    @media (max-width: 960px) {
+      margin-top: 60px;
+    }
   }
 }
